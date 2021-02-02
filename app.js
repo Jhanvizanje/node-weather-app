@@ -4,6 +4,8 @@ const path = require('path');
 const hbs = require('hbs');
 
 const app = express();
+const port = process.env.PORT || 3000;
+
 const hbsPath = path.join(__dirname,'./templates/views');
 const hbsPartials = path.join(__dirname,'./templates/partials');
 
@@ -70,6 +72,6 @@ app.get('*', (req,res) => {
     res.render('error', {errorMsg: 'My 404 Page.'});
 });
 
-app.listen(3000, (err) => {
+app.listen(port, (err) => {
     console.log('Listing on port 3000');
 });

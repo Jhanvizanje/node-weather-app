@@ -1,26 +1,3 @@
-// console.log("in");
-// const weatherForm = document.querySelector('form');
-// const location = document.querySelector('input');
-
-// weatherForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-
-//     console.log(location.value);
-
-//     fetch('http://localhost:3000/weather?address='+location.value).then((response) => {
-//         response.json().then((data) => {
-//             if(data.error) {
-//                 console.log('Error!');
-//             }
-//             else{
-//                 console.log(data);
-//             }
-//         })
-//     })
-// })
-
-console.log('Client side javascript file is loaded!')
-
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const p1 = document.querySelector('#para1');
@@ -33,7 +10,7 @@ weatherForm.addEventListener('submit', (e) => {
     p1.textContent = 'Loading...';
     p2.textContent = '';
 
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
         response.json()
         .then((data) => {
             if (data.error) {
